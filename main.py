@@ -109,7 +109,7 @@ class PlanetSetupApp:
             atmosphere_data = [(self.element_labels[i]["text"], float(self.element_percent_entries[i].get())) for i in range(len(self.selected_elements)) if self.element_var[i].get()]
             custom_shape = self.shape_factors.get(self.shape_choice.get(), 1.0)
 
-            g = (G * mass) / (radius ** 2)
+            g = -((G * mass) / (radius ** 2))
 
             if self.shape_var.get():
                 g = g * custom_shape
